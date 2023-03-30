@@ -1,8 +1,11 @@
 import { AppBar, Box, Button, Toolbar, Typography } from "@mui/material";
+import { useState } from "react";
 import { Link, Outlet } from "react-router-dom";
-import { Link as MuiLink } from "@mui/material";
+import CounterContext from "../shared/counter-context";
 
 export default function Layout() {
+  const [counter, setCounter] = useState<number>(0);
+
   return (
     <>
       <Box sx={{ flexGrow: 1 }}>
@@ -30,7 +33,9 @@ export default function Layout() {
         </AppBar>
       </Box>
 
-      <Outlet />
+      <CounterContext.Provider value={{ counter, setCounter }}>
+        <Outlet />
+      </CounterContext.Provider>
     </>
   );
 }
