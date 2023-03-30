@@ -1,4 +1,5 @@
 import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 import BasicInput from "./components/BasicInput";
 import Inc from "./components/Inc";
 import Decr from "./components/Decr";
